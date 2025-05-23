@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background: white;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard {
+    min-height: 100vh;
+    width: 100vw;
+    background: white;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Top Navigation */
+  .top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: #1e3a8a;
+    color: white;
+    width: 100%;
+  }
+  
+  .nav-left .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .logo-icon {
+    background: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  
+  .nav-center {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  
+  .nav-item:hover,
+  .nav-item.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  .nav-icon {
+    font-size: 1rem;
+  }
+  
+  .profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Main Content */
+  .main-content {
+    padding: 2rem;
+    flex: 1;
+    background: #f8fafc;
+    width: 100%;
+  }
+  
+  .content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+  }
+  
+  .page-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .title-icon {
+    font-size: 1.5rem;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .greeting {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .action-btn {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    color: #374151;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .action-btn:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+  }
+  
+  /* Dashboard Grid */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 2rem;
+    width: 100%;
+    max-width: none;
+  }
+  
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Stats Cards */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+  }
+  
+  .stat-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-card h3 {
+    color: #6b7280;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+  }
+  
+  .view-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .view-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Charts */
+  .charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .chart-card,
+  .yearly-chart {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+  }
+  
+  .chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .chart-header h3 {
+    color: #374151;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .chart-dropdown {
+    color: #6b7280;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .chart-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 0.25rem;
+  }
+  
+  .chart-subtitle {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .chart-container {
+    position: relative;
+    height: 120px;
+  }
+  
+  .chart-highlight {
+    position: absolute;
+    top: -20px;
+    left: 60%;
+    transform: translateX(-50%);
+  }
+  
+  .highlight-box {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+    padding: 0.5rem;
+    text-align: center;
+    min-width: 80px;
+  }
+  
+  .highlight-number {
+    font-weight: 700;
+    color: #3b82f6;
+    font-size: 1.1rem;
+  }
+  
+  .highlight-date {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+  }
+  
+  /* Right Section - Shortcuts */
+  .shortcuts-panel {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    height: fit-content;
+  }
+  
+  .shortcuts-panel h3 {
+    color: #374151;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .shortcut-btn {
+    width: 100%;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all 0.2s;
+  }
+  
+  .shortcut-btn:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+  }
+  
+  .shortcut-btn.premium {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  }
+  
+  .shortcut-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 0.5rem;
+  }
+  
+  .shortcut-item:hover {
+    background: rgba(59, 130, 246, 0.1);
+  }
+  
+  .shortcut-icon {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  
+  .shortcut-item span {
+    color: #374151;
+    font-weight: 500;
+  }
+  
+  /* Footer */
+  .footer {
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer a {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+  
+  .footer a:hover {
+    color: #374151;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .shortcuts-panel {
+      order: -1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-center {
+      display: none;
+    }
+    
+    .stats-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .charts-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .main-content {
+      padding: 1rem;
+    }
+    
+    .top-nav {
+      padding: 1rem;
+    }
+    
+    .content-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .action-buttons {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .action-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
